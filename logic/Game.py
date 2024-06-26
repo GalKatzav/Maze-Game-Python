@@ -94,6 +94,7 @@ class Game(IGame):
         return player_rect.colliderect(exit_rect)
 
     def display_win_animation(self):
+        self.win_sound.play()  # Play the win sound
         for i in range(len(self.confetti_images)):
             self.screen.fill(self.WHITE)
             confetti_image = self.confetti_images[i]
@@ -149,7 +150,6 @@ class Game(IGame):
                 self.player.draw(self.screen)
 
                 if self.check_win():
-                    self.win_sound.play()
                     self.display_win_animation()
                     pygame.time.wait(3000)
                     in_menu = True
