@@ -10,9 +10,5 @@ class IMenu(ABC):
         pass
 
     @abstractmethod
-    def get_selected_color(self):
-        pass
-
-    @abstractmethod
     def get_selected_difficulty(self):
         pass
